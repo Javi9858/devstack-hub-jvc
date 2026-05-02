@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-background text-text font-sans antialiased;
+  }
+}
+
+@layer components {
+  /* Glassmorphism utility */
+  .glass {
+    @apply bg-surface/80 backdrop-blur-md border border-white/10;
+  }
+  
+  /* Input animations */
+  .input-premium {
+    @apply w-full bg-background border border-white/10 rounded-lg px-4 py-3 text-text placeholder-textMuted 
+           focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/50 transition-all duration-300;
+  }
+  
+  /* Button animations */
+  .btn-premium {
+    @apply relative overflow-hidden font-medium rounded-lg px-6 py-3 transition-all duration-300 
+           hover:shadow-[0_0_20px_rgba(165,42,42,0.4)] active:scale-95 disabled:opacity-50 disabled:pointer-events-none;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-hover btn-premium;
+  }
+}
